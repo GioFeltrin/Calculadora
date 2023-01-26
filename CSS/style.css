@@ -32,18 +32,18 @@ h3 {
     text-align: right;
 }
 
-#op_inserida, 
-#op_anterior {
+#opInserida, 
+#opAnterior {
     min-height: 1.6em;
     padding: 0.2em;
     overflow-wrap: break-word;
 }
 
-#op_anterior {
+#opAnterior {
     color: #777;
 }
 
-#op_inserida {
+#opInserida {
     font-size: 3em;
     font-weight: 700;
 }
