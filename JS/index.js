@@ -20,15 +20,38 @@ class Calculator {
 
     processOperation (operation) {
         let operationValue;
-        let Anterior = +this.opAnteriorFunc.innerText;
-        let Inserida = +this.opInseridaFunc.innerText;
+        const Anterior = +this.opAnteriorFunc.innerText.split(" ") [0];
+        const Inserida = +this.opInseridaFunc.innerText;
+
+        switch(operation){
+            case "+":
+                operationValue = Anterior + Inserida
+                this.updateScreen (operationValue, operation, Anterior, Inserida)
+                break;
+            default:
+                return;
+        }
     }
 
+    updateScreen (
+        operationValue = null, 
+        operation = null, 
+        Inserida = null, 
+        Anterior = null
+    ){
 
+            console.log (operationValue, operation, Anterior, Inserida);
 
-
-    updateScreen (){
-        this.opInseridaFunc.innerText += this.opInserida;
+        if (operationValue === null) {
+            this.opInseridaFunc.innerText += this.opInserida;
+        } else {
+            if (Anterior === 0){
+                this.operationValue = Inserida;
+            }
+            this.opAnteriorFunc.innerText = `${operationValue} ${operation}`;
+            this.opInseridaFunc.innerText = "";
+        }
+        
     }
 }
 
